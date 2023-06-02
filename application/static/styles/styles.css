@@ -1,0 +1,15 @@
+:root {
+    --primary-color: black;
+    --secondary-color: white;
+    --tertiary-color: orange;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+h1 {
+    color: var(--tertiary-color);
+}
