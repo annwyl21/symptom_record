@@ -18,10 +18,7 @@ The tool addresses the need for busy individuals, like parents or pet owners, to
 - **Multilingual Support Expansion**: 
     To facilitate effective communication, the tool should also accommodate multiple languages.
 
-### Limitations
-- **Diagnosis**:
-    At no point will this application suggest a diagnosis or generate symptoms designed to guide a diagnosis or a specific treatment. It is a summarizing tool designed to support communication between patient and medic/ VET.
-- **Not build using a medically trained model**:
-    This application will be built using an LLM trained to summarize language, it will not use a medically trained model to support disgnosis or to rephrase symptoms using medical phrasing to support diagnosis. All medical knowledge will be expected to be provided by the GP or VET and never from this application.
-- **Pass it on**:
-    It is expected that with the development of medically trained AI, that this tool may eventually speak directly to a medically trained AI, however every step has been taken to try to ensure that this tool is purely to facilitate communication between patient and doctor and not to pass on errors in messages in order to prevent a game of '_pass it on_' developing between doctor and patient (also historically known as _Chinese Whispers_, or _Russian Telephone_).
+### Constraints
+- **No Diagnostic Role**: This application merely facilitates patient-doctor communication and does not provide diagnoses or generate symptom-related information.
+- **Non-medical Model**: The tool uses a language summarizing model, not medically trained, implying any medical expertise should come from the healthcare provider, not the application.
+- **No Error Propagation**: Despite potential integration with medically trained AI, the tool aims to ensure clear patient-doctor communication, averting any risk of miscommunication akin to a 'Chinese Whispers' scenario.
