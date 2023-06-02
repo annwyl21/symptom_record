@@ -2,7 +2,7 @@
 
 This application facilitates the logging of symptoms in free text, such as headaches or hip pain, over time. The accumulated data can be integrated with AI to generate a concise symptom summary for healthcare professionals or VETs.
 
-## Purpose
+## [Purpose](./application/templates/index.html)
 
 The tool addresses the need for busy individuals, like parents or pet owners, to accurately record and convey symptoms during brief medical consultations. As AI increasingly aids in diagnosis, precise symptom reporting becomes paramount. This tool offers a solution to this challenge.
 
