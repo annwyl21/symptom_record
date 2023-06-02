@@ -1,15 +1,28 @@
 :root {
-    --primary-color: black;
-    --secondary-color: white;
-    --tertiary-color: orange;
+    --primary-color: #f8fbf8;
+    --secondary-color: #e3dac9;
+    --tertiary-color: #f0eee4;
+    --darker-color: #464655;
+    --accent-color: #5e747f;
 }
 
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: var(--primary-color);
-    color: var(--secondary-color);
+    color: var(--darker-color);
+    font-size: 14px;
+    margin: 10% 10%;
+    margin-top: 10px;
 }
 
 h1 {
-    color: var(--tertiary-color);
+    color: var(--secondary-color);
+}
+
+.btn-primary {
+    background-color: var(--secondary-color);
+    color: var(--darker-color);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
 }
