@@ -2,11 +2,19 @@
 
 {% block main_content %}
 
-<button type="button" class="btn btn-primary">Display my record</button>
-
+<div class="form">
+    <form method="POST" action="">
+      {{ form.hidden_tag() }}
 <div class="mb-3">
     <label for="exampleFormControlTextarea1" class="form-label">Record your symptoms here</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="symptoms"></textarea>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="symptoms">mysymptoms</textarea>
+</div>
+
+<button type="button" class="btn btn-primary">Submit</button>
+
+<a class="btn btn-primary" href="./display_record.html" role="button">Display my record</a>
+
+</form>
 </div>
 
 {% endblock %}

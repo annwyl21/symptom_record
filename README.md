@@ -1,13 +1,23 @@
 # Symptom Logger Application
 
-This application facilitates the logging of symptoms in free text, such as headaches or hip pain, over time. The accumulated data can be integrated with AI to generate a concise symptom summary for healthcare professionals or VETs.
+This application facilitates the logging of symptoms in free text, such as headaches or hip pain, over time. The accumulated symptom data can be concisely summarised, using a [metaprompt](./application/metaprompt.py) by AI for healthcare professionals or VETs.
 
-## [Purpose](./application/templates/index.html)
+## Purpose
 
 The tool addresses the need for busy individuals, like parents or pet owners, to accurately record and convey symptoms during brief medical consultations. As AI increasingly aids in diagnosis, precise symptom reporting becomes paramount. This tool offers a solution to this challenge.
 
+### Run
+- Install the requirements
+```bash
+pip install -r requirements.txt
+```
+- Run the app.py file to start the site locally
+```bash
+python -m flask run
+```
+___
 ### Key Considerations for App Development
-- **Accuracy ([Meta-prompt](./application/metaprompt.py))**: 
+- **Accuracy (Meta-prompt)**: 
     Current AI isn't infallible in summarizing reports, making knowledge of meta-prompts crucial for producing truthful and precise summaries.
 - **User Engagement (UX)**: 
     Ensuring user-friendly and secure interfaces is essential to encourage comprehensive symptom reporting, thus enhancing user engagement and trust.

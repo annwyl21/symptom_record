@@ -2,14 +2,20 @@
 
 {% block main_content %}
 
-<div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label">Username</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="ann21">
+<div class="form">
+  <form method="POST" action="">
+    {{ form.hidden_tag() }}
+  <div class="mb-3">
+    <label for="username" class="form-label">{{ form.username.label }}</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" name='username' placeholder="myname">
   </div>
 
   <div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label">Password</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="whatever">
+    <label for="password" class="form-label">{{ form.password.label }}</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" name='password' placeholder="mypassword">
   </div>
 
+  <button type="button" class="btn btn-primary">Submit</button>
+</form>
+</div>
 {% endblock %}
