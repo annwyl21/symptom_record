@@ -1,5 +1,5 @@
 Flask
-flask wtf
+flask_wtf
 wtforms
 
-openai
+# openai
