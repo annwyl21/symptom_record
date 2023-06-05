@@ -16,9 +16,9 @@ def login():
         if password != 'test':
             error = "Please enter username and password"
         else:
-            return render_template('record.html')
+            return render_template('record.html', form=form)
     else:
-        return render_template('login.html', form=form, error=error)
+        return render_template('login.html', title="Log in page", form=form, error=error)
 
 @app.route('/record', methods=['GET', 'POST'])
 def record():
@@ -27,8 +27,8 @@ def record():
         symptoms = form.symptoms.data
         if symptoms:
             return render_template('success.html')
-    return render_template('record.html', form=form)
+    return render_template('record.html', title="Record Symptoms", form=form)
 
 @app.route('/display_record.html')
 def display_record():
-    return render_template('display_record.html')
+    return render_template('display_record.html', title='Symptom Record')
