@@ -3,7 +3,6 @@ from application import app
 from application.forms import LoginForm, RecordForm
 import time
 from datetime import datetime
-#import os
 
 @app.route('/')
 def index():
