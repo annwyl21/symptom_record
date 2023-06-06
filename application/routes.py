@@ -7,6 +7,16 @@ from application.forms import LoginForm, RecordForm
 def index():
     return render_template('index.html', title='Home')
 
+@app.route('/record', methods=['GET', 'POST'])
+def record():
+    form = RecordForm()
+    if request.method == 'POST':
+        symptoms = form.symptoms.data
+        with open('./file_output/symptoms.txt', 'a') as f:
+            f.write(symptoms + '\n')
+        return render_template('success.html', title="Success")
+    return render_template('record.html', title="Record Symptoms", form=form)
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     error = ""
@@ -16,23 +26,12 @@ def login():
         if password != 'test':
             error = "Please enter username and password"
         else:
-            return render_template('record.html', form=form)
+            return render_template('login_success.html', title="Login Success")
     else:
         return render_template('login.html', title="Log in page", form=form, error=error)
 
-@app.route('/record', methods=['GET', 'POST'])
-def record():
-    form = RecordForm()
-    if request.method == 'POST':
-        symptoms = form.symptoms.data
-        with open('./file_output/symptoms.txt', 'a') as f:
-            f.write('test' + '\n')
-        return render_template('success.html')
-    return render_template('record.html', title="Record Symptoms", form=form)
-
 @app.route('/display_record.html')
 def display_record():
-    with open('./file_output/symptoms.txt') as f:
-        for text in f:
-            print(text)
-    return render_template('display_record.html', title='Symptom Record')
+    with open('./file_output/symptoms.txt', 'r') as f:
+        content = f.read()
+    return render_template('display_record.html', title='Symptom Record', content=content)

@@ -5,18 +5,20 @@
 <div class="form">
   <form method="POST" action="">
     {{ form.hidden_tag() }}
-  <div class="mb-3">
-    <label for="username" class="form-label">{{ form.username.label }}</label>
-    <input type="text" class="form-control" id="username" name='username' placeholder="myname">
-  </div>
+    <div class="mb-3">
+      <label for="username" class="form-label">{{ form.username.label }}</label>
+      <input type="text" class="form-control" id="username" name='username' placeholder="myname">
+    </div>
 
-  <div class="mb-3">
-    <label for="password" class="form-label">{{ form.password.label }}</label>
-    <input type="text" class="form-control" id="password" name='password' placeholder="mypassword">
-  </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">{{ form.password.label }}</label>
+      <input type="text" class="form-control" id="password" name='password' placeholder="mypassword">
+    </div>
 
-  <button type="submit" class="btn btn-primary submit">{{ form.submit.label }}</button>
+    <!-- <button type="submit" class="btn btn-primary submit">{{ form.submit.label }}</button> -->
+    {{ form.submit(class="btn btn-primary submit") }}
 
   </form>
 </div>
+
 {% endblock %}

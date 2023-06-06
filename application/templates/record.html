@@ -10,11 +10,12 @@
             <textarea class="form-control" id="symptoms" rows="3" name="symptoms" placeholder="mysymptoms"></textarea>
         </div>
 
-        <button type="submit" class="btn btn-primary submit">{{ form.submit.label }}</button>
+        {{ form.submit(class="btn btn-primary submit") }}
     </form>
 </div>
 
 <br>
+
 <a class="btn btn-primary" href="./display_record.html" role="button">Display my record</a>
 
 {% endblock %}
