@@ -1,7 +1,2 @@
-Record of Symptoms over time
-
-
-
-this is a test
-this is yet another test
-this is yet another test
+Record of Symptoms over time<br>
+06-06-2023 10:51<br>hip pain in right leg<br>

@@ -1,6 +1,8 @@
 from flask import render_template, request
 from application import app
 from application.forms import LoginForm, RecordForm
+import time
+from datetime import datetime
 #import os
 
 @app.route('/')
@@ -12,8 +14,10 @@ def record():
     form = RecordForm()
     if request.method == 'POST':
         symptoms = form.symptoms.data
+        now = datetime.now()
+        date_time_str = now.strftime("%d-%m-%Y %H:%M")
         with open('./file_output/symptoms.txt', 'a') as f:
-            f.write(symptoms + '\n')
+            f.write(date_time_str + '<br>' + symptoms + '<br>')
         return render_template('success.html', title="Success")
     return render_template('record.html', title="Record Symptoms", form=form)
 
