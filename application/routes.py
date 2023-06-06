@@ -25,15 +25,14 @@ def record():
     form = RecordForm()
     if request.method == 'POST':
         symptoms = form.symptoms.data
-        if symptoms:
-            with open('symptoms.md', 'a') as f:
-                f.write('test' + '\n')
-            return render_template('success.html')
+        with open('./file_output/symptoms.txt', 'a') as f:
+            f.write('test' + '\n')
+        return render_template('success.html')
     return render_template('record.html', title="Record Symptoms", form=form)
 
 @app.route('/display_record.html')
 def display_record():
-    with open('symptoms.md') as f:
+    with open('./file_output/symptoms.txt') as f:
         for text in f:
             print(text)
     return render_template('display_record.html', title='Symptom Record')

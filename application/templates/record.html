@@ -5,16 +5,16 @@
 <div class="form">
     <form method="POST" action="">
       {{ form.hidden_tag() }}
-<div class="mb-3">
-    <label for="symptoms" class="form-label">Record your symptoms here</label>
-    <textarea class="form-control" id="symptoms" rows="3" name="symptoms">mysymptoms</textarea>
+        <div class="mb-3">
+            <label for="symptoms" class="form-label">Record your symptoms here</label>
+            <textarea class="form-control" id="symptoms" rows="3" name="symptoms" placeholder="mysymptoms"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary submit">{{ form.submit.label }}</button>
+    </form>
 </div>
 
-<button type="submit" class="btn btn-primary submit">{{ form.submit.label }}</button>
-
+<br>
 <a class="btn btn-primary" href="./display_record.html" role="button">Display my record</a>
-
-</form>
-</div>
 
 {% endblock %}
