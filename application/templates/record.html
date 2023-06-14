@@ -2,6 +2,12 @@
 
 {% block main_content %}
 
+
+<a class="btn btn-primary" href="./display_record" role="button">My Symptom Record</a>
+<br>
+<a class="btn btn-primary" href="./display_summary" role="button">Summary of Symptoms</a>
+<br>
+
 <div class="form">
     <form method="POST" action="">
       {{ form.hidden_tag() }}
@@ -15,7 +21,5 @@
 </div>
 
 <br>
-
-<a class="btn btn-primary" href="./display_record.html" role="button">Display my record</a>
 
 {% endblock %}

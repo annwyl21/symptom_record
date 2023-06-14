@@ -1,6 +1,7 @@
 from flask import render_template, request
 from application import app
 from application.forms import LoginForm, RecordForm
+from application.summarize import Summarize
 import time
 from datetime import datetime
 
@@ -33,8 +34,15 @@ def login():
     else:
         return render_template('login.html', title="Log in page", form=form, error=error)
 
-@app.route('/display_record.html')
+@app.route('/display_record')
 def display_record():
     with open('./file_output/symptoms.txt', 'r') as f:
         content = f.read()
     return render_template('display_record.html', title='Symptom Record', content=content)
+
+@app.route('/display_summary')
+def display_summary():
+    with open('./file_output/symptoms.txt', 'r') as f:
+        record = f.read()
+        summary = Summarize.create_summary(record)
+    return render_template('display_summary.html', title='Symptom Summary', content=summary)

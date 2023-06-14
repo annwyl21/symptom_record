@@ -2,10 +2,9 @@
 
 {% block main_content %}
 
-Log in Successful
+Login Successful
 
-<br>
-
-<a href="./record" class="btn btn-primary">Record new symptoms</a>
+<!-- stay on this page for 5 seconds then automatically redirect to record.html -->
+<script src="{{ url_for('static', filename='scripts/script.js') }}"></script>
 
 {% endblock %}

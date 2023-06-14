@@ -2,4 +2,9 @@ Flask
 flask_wtf
 wtforms
 
+collections
+re
+nltk
+nltk.corpus
+
 # openai

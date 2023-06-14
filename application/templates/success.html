@@ -2,8 +2,9 @@
 
 {% block main_content %}
 
-Symptoms Recorded
-<br>
-<a class="btn btn-primary" href="./display_record.html" role="button">Display my record</a>
+Symptoms Recorded Successfully
+
+<!-- stay on this page for 5 seconds then automatically redirect to record.html -->
+<script src="{{ url_for('static', filename='scripts/script.js') }}"></script>
 
 {% endblock %}
