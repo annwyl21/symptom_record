@@ -13,8 +13,8 @@ def create_summary(record):
     max_words = 12
     num_sents = 3
                     
-    speech_edit_no_stop = remove_stop_words(modified_record)
-    word_freq = get_word_freq(speech_edit_no_stop)
+    string_stopwords_removed = remove_stop_words(modified_record)
+    word_freq = get_word_freq(string_stopwords_removed)
     sent_scores = score_sentences(initial_record, word_freq, max_words)
 
     counts = Counter(sent_scores)
@@ -25,14 +25,14 @@ def create_summary(record):
 
 def remove_stop_words(modified_record):
     stop_words = set(stopwords.words('english'))
-    speech_edit_no_stop = ''
+    string_stopwords_removed = ''
     for word in nltk.word_tokenize(modified_record):
         if word.lower() not in stop_words:
-            speech_edit_no_stop += word + ' '  
-    return speech_edit_no_stop
+            string_stopwords_removed += word + ' '  
+    return string_stopwords_removed
 
-def get_word_freq(speech_edit_no_stop):
-    word_freq = nltk.FreqDist(nltk.word_tokenize(speech_edit_no_stop.lower()))
+def get_word_freq(string_stopwords_removed):
+    word_freq = nltk.FreqDist(nltk.word_tokenize(string_stopwords_removed.lower()))
     return word_freq
 
 def score_sentences(initial_record, word_freq, max_words):
@@ -54,5 +54,3 @@ if __name__ == "__main__":
         record = f.read()
     
     create_summary(record)
-    # mysummary = Summarize.create_summary(record)
-    # print(mysummary)
