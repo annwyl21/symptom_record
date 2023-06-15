@@ -3,6 +3,5 @@ flask_wtf
 wtforms
 
 nltk
-#nltk.corpus
 
-# openai
+openai
