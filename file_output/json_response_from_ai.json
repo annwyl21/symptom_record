@@ -1,0 +1,20 @@
+{
+    "id": "cmpl-7RijbW6zHTVqTk1Mc8MSXTmQFtEjj",
+    "object": "text_completion",
+    "created": 1686841171,
+    "model": "text-davinci-003",
+    "choices": [
+      {
+        "text": "\n\nSummary: I have been experiencing hip pain in my right leg, trouble using the toilet, difficulty standing and getting up from the floor and when lying on my right side. Additionally, I've also had stiffening in both hips, knee pain when walking to the shops and difficulty going up stairs. \nStatus: Worsening \nTime period: 6 days",
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 432,
+      "completion_tokens": 75,
+      "total_tokens": 507
+    }
+  }
+  
