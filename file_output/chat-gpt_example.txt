@@ -1,0 +1,20 @@
+Relevant symptoms: hip pain in right leg, difficulty standing from floor, trouble going to the toilet, painful to lie on right side in bed, stiff when standing up after sitting, left knee pain when walking, difficulty using the stairs.
+
+Summary: The hip pain in the right leg and stiffness when getting up have worsened over time. There is also difficulty standing from the floor, using the stairs, and walking, while the trouble going to the toilet remains the same.
+
+Sentiment: Negative
+
+Status: Worsening
+
+Time period: 06-06-2023 to 16-06-2023
+
+RESULT ABOVE BASED ON PROMPT...
+Relevant symptoms: hip pain in right leg, difficulty standing from floor, trouble going to the toilet, painful to lie on right side in bed, stiff when standing up after sitting, left knee pain when walking, difficulty using the stairs.
+
+Summary: The hip pain in the right leg and stiffness when getting up have worsened over time. There is also difficulty standing from the floor, using the stairs, and walking, while the trouble going to the toilet remains the same.
+
+Sentiment: Negative
+
+Status: Worsening
+
+Time period: 06-06-2023 to 16-06-2023
