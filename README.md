@@ -1,6 +1,6 @@
 # Symptom Logger Application
 
-This application facilitates the logging of symptoms in free text, such as headaches or hip pain, over time. The accumulated symptom data can be concisely summarised, using a [metaprompt](./application/metaprompt.py) by AI for healthcare professionals or VETs.
+This application facilitates the logging of symptoms in free text, such as headaches or hip pain, over time. The accumulated symptom data can be concisely summarised, using a [metaprompt](./application/metaprompt.py) by AI for healthcare professionals or VETs. I used the **open ai playground** to develop my prompt and it was a really useful tool.
 
 ## Purpose
 

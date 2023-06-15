@@ -1,7 +1,8 @@
 from flask import render_template, request
 from application import app
 from application.forms import LoginForm, RecordForm
-from application.summarize import create_summary
+#from application.summarize import create_summary
+from application.summarize_ai import summarize_with_ai
 from datetime import datetime
 
 @app.route('/')
@@ -41,7 +42,5 @@ def display_record():
 
 @app.route('/display_summary')
 def display_summary():
-    with open('./file_output/symptoms.txt', 'r') as f:
-        record = f.read()
-        summary = create_summary(record)
-    return render_template('display_summary.html', title='Symptom Summary', content=summary)
+    summary = summarize_with_ai().choices[0].text
+    return render_template('display_summary.html', title='Symptom Summary', summary=summary)
