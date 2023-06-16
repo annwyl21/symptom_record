@@ -1,14 +1,25 @@
-Perform the following actions:
-- Summarise the text delimited by triple backticks with a focus on change over time in symptoms, eg which are worsening or improving. This short summary is intended to be spoken by a person trying to convey their symptoms using easy to understand language.
-1. find out relevant symptoms from the information provided.
-2. Then, summarise the information based on the relevant symptoms.
-3. Identify the status of symptoms, are they improving or worsening?
-4. Separate your answers with line breaks.
-5. Reread your summary before you return it to me and check that all the symptoms described do exist in the original text provided.
-Use the following format:
-Summary: <short summary using 'I'>
-Status: <status>
-Time period: <time period in days>
+BEST PROMPT RESULT ACHIEVED:
+
+Parameters:
+    model="text-davinci-003",
+    temperature=1,
+    max_tokens=100,
+    top_p=1,
+    frequency_penalty=1,
+    presence_penalty=1
+
+Prompt:
+    Perform the following actions:
+    - Summarise the text delimited by triple backticks with a focus on change over time in symptoms, eg which are worsening or improving and whether the person experiences pain every day. This concise summary is intended to be spoken by a person trying to convey their symptoms using easy to understand language without clauses.
+    1. find out relevant symptoms from the information provided.
+    2. then, summarise the text provided in simple, short sentences.
+    3. Identify the status of symptoms, are they improving or worsening?
+    4. Separate your answers with line breaks.
+    5. Reread your summary before you return it to me and check: 1. that all the symptoms described do exist in the original text provided.
+    Use the following format:
+    Summary: <short summary using 'I'>
+    Status: <status>
+    Time period: <time period in days>
 Text:
 ```Record of Symptoms over time<br>
 06-06-2023 10:51<br>hip pain in right leg<br>
@@ -23,6 +34,6 @@ Text:
 16-06-2023 10:10<br>hip pain in right leg, difficulty using the stairs<br>```
 
 RESULT:
-Summary: I have hip pain in my right leg, and more difficulty standing from lying or sitting positions over time. My left knee also hurts when I am walking. It is painful to lie on the right side of my bed and when getting up, it is stiffer than before.
-Time Period: 10 days
-Status: Worsening
+Summary: I have pain in my right hip and left knee, difficulty standing, going to the toilet and using stairs. 
+Status: Pain is worsening with time. 
+Time period: 11 days

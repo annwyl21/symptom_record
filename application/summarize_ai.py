@@ -12,7 +12,7 @@ def summarize_with_ai():
     model="text-davinci-003",
     prompt="""
     Perform the following actions:
-    - Summarise the text delimited by triple backticks with a focus on change over time in symptoms, eg which are worsening or improving. This concise summary is intended to be spoken by a person trying to convey their symptoms using easy to understand language without clauses.
+    - Summarise the text delimited by triple backticks with a focus on change over time in symptoms, eg which are worsening or improving and whether the person experiences pain every day. This concise summary is intended to be spoken by a person trying to convey their symptoms using easy to understand language without clauses.
     1. find out relevant symptoms from the information provided.
     2. then, summarise the text provided in simple, short sentences.
     3. Identify the status of symptoms, are they improving or worsening?
@@ -24,7 +24,7 @@ def summarize_with_ai():
     Time period: <time period in days>
     Text:```""" + symptom_history + "```",
       temperature=1,
-      max_tokens=200,
+      max_tokens=100,
       top_p=1,
       frequency_penalty=1,
       presence_penalty=1
@@ -49,8 +49,8 @@ if __name__ == "__main__":
   print(type(summarize_with_ai().choices[0].text)) # returns a string
   print(summarize_with_ai().choices[0].text)
 
-  # temperature=1, meaning the response will vary
-  # max_tokens=200, meaning the response will be up to 200 words long
+  # temperature=1, meaning the response will vary - THIS MAKES IT LESS TESTABLE USING AUTOMATION TESTING
+  # max_tokens=100, meaning the response will be up to 100 words long
   # top_p=1, meaning the response will be the most likely answer and use higher level vocabulary
   # frequency_penalty=1, meaning the response will be more creative
   # presence_penalty=1, meaning the response will make more sense
