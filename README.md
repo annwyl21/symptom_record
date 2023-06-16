@@ -17,9 +17,12 @@ python -m flask run
 ```
 
 ## Challenges Overcome
-- When experimenting with the text-curie-001 AI model, I encountered a potential problem. The model returned a superior summary but it did not return what I had asked for and it made an inference about the symptoms which, while accurate, is unacceptable as that inference should be made by a qualified doctor or medical AI tool and never by a symptom sumarizer. The text-davinci-003 AI model was superior in that it completed the task in a wholly acceptable manner.
-- Developing the model was enjoyable and took time, I had to change the intention text in order to narrow the response appropriately, something I had not anticipated. My original intention text was *This summary is intended to be read by a doctor or a VET in order to make a diagnosis, an onward referral or prescribe treatment from these symptoms.* but that was eventually modified to *This concise summary is intended to be spoken by a person trying to convey their symptoms using easy to understand language without clauses.*.
-- Getting the model to handle time also required some thought and I added the specific text *with a focus on change over time in symptoms, eg which are worsening or improving and whether the person experiences pain every day* to my prompt in order to get the model to comment on symptoms over time.
+
+1. **Adaptive Model Selection**: While experimenting with the **text-curie-001** AI model, a potential issue surfaced. The model delivered an excellent summary, but it deviated from the intended request, making an inference about the symptoms. Although precise, such inferencing could be inappropriate, as it should be conducted by a certified doctor or a medical AI tool, not by a symptom summarizer. The **text-davinci-003** AI model was superior and completed the task as required.
+
+2. **Refining Intention Text**: The process of developing the model was engaging and time-consuming. An unforeseen adjustment was necessary: refining the intention text to narrow down the response suitably. Initially, the intention text was *'This summary is intended to be read by a doctor or a VET in order to make a diagnosis, an onward referral or prescribe treatment from these symptoms.'* This was eventually revised to *'This concise summary is intended to be spoken by a person trying to convey their symptoms using easy to understand language without clauses.'*
+
+3. **Temporal Context Management**: Ensuring the model correctly interprets time-related context necessitated some strategizing. Specific text *'with a focus on change over time in symptoms, eg which are worsening or improving and whether the person experiences pain every day'* was incorporated into the prompt to compel the model to consider and comment on the progression of symptoms over time.
 
 ___
 ### Key Considerations for App Development
