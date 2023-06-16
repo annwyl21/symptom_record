@@ -30,5 +30,6 @@ def scatterplot():
 if __name__ == '__main__':
     scatterplot()
 
+# add code to handle dates properly
 # need to add code to handle missing values
 # need to add code to handle too many dates along y-axis

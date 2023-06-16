@@ -10,7 +10,7 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: var(--primary-color);
     color: var(--darker-color);
-    font-size: 14px;
+    font-size: 1em;
     margin: 10% 10%;
     margin-top: 10px;
 }
@@ -29,4 +29,9 @@ h1 {
 
 input:placeholder-shown {
     font-style: italic;
+}
+
+#reference {
+    font-size: 0.5em;
+    color: var(--darker-color);
 }
