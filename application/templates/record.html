@@ -3,30 +3,33 @@
 {% block main_content %}
 
 
-<a class="btn btn-primary" href="./display_record" role="button">My Symptom Record</a>
-<br>
+
+
 <a class="btn btn-primary" href="./display_summary" role="button">Summary of Symptoms</a>
-<br>
+
 
 <div class="form">
     <form method="POST" action="">
       {{ form.hidden_tag() }}
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="pain" id="flexRadioDefault1">
-        <label class="form-check-label" for="flexRadioDefault1">I am in pain</label>
-      </div>
-      <!-- <div class="form-check">
-        <input class="form-check-input" type="radio" name="mchill" id="flexRadioDefault2">
-        <label class="form-check-label" for="flexRadioDefault2">I want to record my pain using the pain scale</label>
-      </div> -->
+
         <div class="mb-3">
             <label for="symptoms" class="form-label">Record your symptoms here</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="pain" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">I am in pain</label>
+              </div>
+              <!-- <div class="form-check">
+                <input class="form-check-input" type="radio" name="mchill" id="flexRadioDefault2">
+                <label class="form-check-label" for="flexRadioDefault2">I want to record my pain using the pain scale</label>
+              </div> -->
             <textarea class="form-control" id="symptoms" rows="3" name="symptoms" placeholder="mysymptoms"></textarea>
         </div>
 
         {{ form.submit(class="btn btn-primary submit") }}
     </form>
 </div>
+
+<a class="btn btn-primary" href="./display_record" role="button">Display my Symptom Record</a>
 
 <br>
 
