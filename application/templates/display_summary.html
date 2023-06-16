@@ -5,5 +5,8 @@
 <h2>Summary of Symptom Record</h2>
 <br>
 <p>{{ summary }}</p>
+<br>
+<p>A picture showing symptoms getting 'worse' over time.</p>
+<img src="{{ url_for('static', filename='./images/scatterplot.png') }}" alt="scatterplot showing symptom change over time">
 
 {% endblock %}
