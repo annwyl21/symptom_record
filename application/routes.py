@@ -3,6 +3,8 @@ from application import app
 from application.forms import LoginForm, RecordForm
 #from application.summarize import create_summary
 from application.summarize_ai import summarize_with_ai
+from application.scatterplot import scatterplot
+from application.bubbleplot import bubbleplot
 from datetime import datetime
 
 @app.route('/')
@@ -43,4 +45,10 @@ def display_record():
 @app.route('/display_summary')
 def display_summary():
     summary = summarize_with_ai().choices[0].text
-    return render_template('display_summary.html', title='Symptom Summary', summary=summary)
+    pain = True
+    if pain == False:
+        # create symptom scatterplot or bubbleplot to add a dimension of pain information
+        scatterplot()
+    else:
+        bubbleplot()
+    return render_template('display_summary.html', title='Symptom Summary', summary=summary, pain=pain)

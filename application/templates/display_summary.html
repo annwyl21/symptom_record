@@ -7,6 +7,11 @@
 <p>{{ summary }}</p>
 <br>
 <p>A picture showing symptoms getting 'worse' over time.</p>
+
+{% if pain == False %}
 <img src="{{ url_for('static', filename='./images/scatterplot.png') }}" alt="scatterplot showing symptom change over time">
+{% else %}
+<img src="{{ url_for('static', filename='./images/bubbleplot.png') }}" alt="scatterplot showing symptom change over time">
+{% endif %}
 
 {% endblock %}
