@@ -15,11 +15,16 @@ def index():
 def record():
     form = RecordForm()
     if request.method == 'POST':
+        pain = form.pain.data
+        #mchill = form.mchill.data
         symptoms = form.symptoms.data
         now = datetime.now()
         date_time_str = now.strftime("%d-%m-%Y %H:%M")
         with open('./file_output/symptoms.txt', 'a') as f:
-            f.write(date_time_str + '<br>' + symptoms + '<br>')
+            f.write(date_time_str + '<br>' + symptoms + '<br>' + 'Pain=' + str(pain) + '<br>')
+        # if mchill == True:
+        #     return render_template('mchill_pain_scale.html', title="McHill Pain Scale")
+        # else: #(don't forget indent)
         return render_template('success.html', title="Success")
     return render_template('record.html', title="Record Symptoms", form=form)
 
@@ -45,7 +50,7 @@ def display_record():
 @app.route('/display_summary')
 def display_summary():
     summary = summarize_with_ai().choices[0].text
-    pain = True
+    pain = False
     if pain == False:
         # create symptom scatterplot or bubbleplot to add a dimension of pain information
         scatterplot()

@@ -11,6 +11,14 @@
 <div class="form">
     <form method="POST" action="">
       {{ form.hidden_tag() }}
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="pain" id="flexRadioDefault1">
+        <label class="form-check-label" for="flexRadioDefault1">I am in pain</label>
+      </div>
+      <!-- <div class="form-check">
+        <input class="form-check-input" type="radio" name="mchill" id="flexRadioDefault2">
+        <label class="form-check-label" for="flexRadioDefault2">I want to record my pain using the pain scale</label>
+      </div> -->
         <div class="mb-3">
             <label for="symptoms" class="form-label">Record your symptoms here</label>
             <textarea class="form-control" id="symptoms" rows="3" name="symptoms" placeholder="mysymptoms"></textarea>
