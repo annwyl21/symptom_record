@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block main_content %}
+
+<h2>Pain Questionnaire</h2>
+<h3>Section 3 of 3</h3>
+<h4>How strong is your pain?</h4>
+<p>Which words describes your pain right now?</p>
+
+        <div class="mb-3">
+
+            {% for key, value in pain_intensity.items() %}
+                {% for word in value %}
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="{{ word }}" id="xxx">
+                    <label class="form-check-label" for="xxx">{{ word }}</label>
+                </div>
+                {% endfor %}
+            {% endfor %}
+        </div>
+
+<p id="reference">based on (but not a replica of) Melzack R. The McGill Pain Questionnaire: Major properties and scoring methods. Pain. 1975;1: 277-299
+<a href="https://pubmed.ncbi.nlm.nih.gov/1235985/" target="_blank">Link to original paper</a></p>
+
+{% endblock %}

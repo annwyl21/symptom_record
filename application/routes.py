@@ -59,7 +59,18 @@ def display_summary():
         bubbleplot()
     return render_template('display_summary.html', title='Symptom Summary', summary=summary, pain=pain)
 
-@app.route('/mcgill', methods=['GET', 'POST'])
-def mcgill():
+@app.route('/mcgill1', methods=['GET', 'POST'])
+def mcgill1():
     pain_words = mcgill_feels_like
     return render_template('1_pain_questionnaire.html', title='McGill Pain Questionnaire', pain_words=pain_words)
+
+@app.route('/mcgill2', methods=['GET', 'POST'])
+def mcgill2():
+    pain_change = mcgill_change
+    pain_increase = mcgill_increase
+    return render_template('2_pain_questionnaire.html', title='McGill Pain Questionnaire', pain_change=pain_change, pain_increase=pain_increase)
+
+@app.route('/mcgill3', methods=['GET', 'POST'])
+def mcgill3():
+    pain_intensity = Mcgill_intensity
+    return render_template('2_pain_questionnaire.html', title='McGill Pain Questionnaire', pain_intensity=pain_intensity)
