@@ -7,6 +7,10 @@
 <h4>How strong is your pain?</h4>
 <p>Which words describes your pain right now?</p>
 
+<div class="form">
+    <form method="POST" action="">
+      {{ form.hidden_tag() }}
+
         <div class="mb-3">
 
             {% for key, value in pain_intensity.items() %}
@@ -18,6 +22,10 @@
                 {% endfor %}
             {% endfor %}
         </div>
+
+        {{ form.submit(class="btn btn-primary submit") }}
+    </form>
+</div>
 
 <p id="reference">based on (but not a replica of) Melzack R. The McGill Pain Questionnaire: Major properties and scoring methods. Pain. 1975;1: 277-299
 <a href="https://pubmed.ncbi.nlm.nih.gov/1235985/" target="_blank">Link to original paper</a></p>

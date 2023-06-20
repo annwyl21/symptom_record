@@ -61,16 +61,19 @@ def display_summary():
 
 @app.route('/mcgill1', methods=['GET', 'POST'])
 def mcgill1():
+    form = Mcgill1Form()
     pain_words = mcgill_feels_like
-    return render_template('1_pain_questionnaire.html', title='McGill Pain Questionnaire', pain_words=pain_words)
+    return render_template('1_pain_questionnaire.html', title='McGill Pain Questionnaire', form=form, pain_words=pain_words)
 
 @app.route('/mcgill2', methods=['GET', 'POST'])
 def mcgill2():
+    form = Mcgill2Form()
     pain_change = mcgill_change
     pain_increase = mcgill_increase
-    return render_template('2_pain_questionnaire.html', title='McGill Pain Questionnaire', pain_change=pain_change, pain_increase=pain_increase)
+    return render_template('2_pain_questionnaire.html', title='McGill Pain Questionnaire', form=form, pain_change=pain_change, pain_increase=pain_increase)
 
 @app.route('/mcgill3', methods=['GET', 'POST'])
 def mcgill3():
+    form = Mcgill3Form()
     pain_intensity = Mcgill_intensity
-    return render_template('2_pain_questionnaire.html', title='McGill Pain Questionnaire', pain_intensity=pain_intensity)
+    return render_template('3_pain_questionnaire.html', title='McGill Pain Questionnaire', form=form, pain_intensity=pain_intensity)

@@ -7,6 +7,10 @@
 <h4>How does your pain change with time?</h4>
 <p>Which word or words would you choose to describe the pattern of your pain?</p>
 
+<div class="form">
+    <form method="POST" action="">
+      {{ form.hidden_tag() }}
+
         <div class="mb-3">
 
             {% for key, value in pain_change.items() %}
@@ -32,6 +36,10 @@
                 {% endfor %}
             {% endfor %}
         </div>
+
+        {{ form.submit(class="btn btn-primary submit") }}
+    </form>
+</div>
 
 <p id="reference">based on Melzack R. The McGill Pain Questionnaire: Major properties and scoring methods. Pain. 1975;1: 277-299
 <a href="https://pubmed.ncbi.nlm.nih.gov/1235985/" target="_blank">Link to original paper</a></p>
