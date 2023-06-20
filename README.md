@@ -4,7 +4,9 @@ This application facilitates the logging of symptoms in free text, such as heada
 
 ## Purpose
 
-The tool addresses the need for busy individuals, like parents or pet owners, to accurately record and convey symptoms during brief medical consultations. As AI increasingly aids in diagnosis, precise symptom reporting becomes paramount. This tool offers a solution to this challenge.
+The tool addresses the need for busy individuals, like parents or pet owners, to accurately record and convey symptoms during brief medical consultations. As AI increasingly aids in diagnosis, precise symptom reporting becomes paramount. This tool offers a solution to this challenge. There is also an option to score pain loosely based on the McGill Pain Assessment, and a bubbleplot tracking symptoms over time and showing pain intensity using bubble size is generated.
+
+![Image - Bubbleplot](./application/static/images/bubbleplot.png)
 
 ### Run
 - Install the requirements
