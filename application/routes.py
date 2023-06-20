@@ -1,6 +1,6 @@
 from flask import render_template, request
 from application import app
-from application.forms import LoginForm, RecordForm
+from application.forms import LoginForm, RecordForm, Mcgill1Form, Mcgill2Form, Mcgill3Form
 #from application.summarize import create_summary
 from application.summarize_ai import summarize_with_ai
 from application.scatterplot import scatterplot
