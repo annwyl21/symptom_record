@@ -5,6 +5,7 @@ from application.forms import LoginForm, RecordForm
 from application.summarize_ai import summarize_with_ai
 from application.scatterplot import scatterplot
 from application.bubbleplot import bubbleplot
+from application.mcgill_pain_questionnaire import mcgill_feels_like, mcgill_change, mcgill_increase, Mcgill_intensity
 from datetime import datetime
 
 @app.route('/')
@@ -57,3 +58,8 @@ def display_summary():
     else:
         bubbleplot()
     return render_template('display_summary.html', title='Symptom Summary', summary=summary, pain=pain)
+
+@app.route('/mcgill', methods=['GET', 'POST'])
+def mcgill():
+    pain_words = mcgill_feels_like
+    return render_template('1_pain_questionnaire.html', title='McGill Pain Questionnaire', pain_words=pain_words)
