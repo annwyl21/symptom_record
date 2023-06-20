@@ -11,17 +11,145 @@
     <form method="POST" action="">
       {{ form.hidden_tag() }}
 
-        <div class="mb-3">
-
-            {% for key, value in pain_words.items() %}
-                {% for word in value %}
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="{{ word }}" id="{{ word }}">
-                    <label class="form-check-label" for="{{ word }}">{{ word }}</label>
-                </div>
-                {% endfor %}
-            {% endfor %}
-        </div>
+        {% for item in form.adjectives1 %}
+            <div>
+                <input type="checkbox" name="{{ item.name }}" value="{{ item.data }}">
+                {{ item.label }}
+            </div>
+        {% endfor %}
+            <br>
+        {% for item in form.adjectives2 %}
+            <div>
+                <input type="checkbox" name="{{ item.name }}" value="{{ item.data }}">
+                {{ item.label }}
+            </div>
+        {% endfor %}
+            <br>
+        {% for item in form.adjectives3 %}
+            <div>
+                <input type="checkbox" name="{{ item.name }}" value="{{ item.data }}">
+                {{ item.label }}
+            </div>
+        {% endfor %}
+            <br>
+        {% for item in form.adjectives4 %}
+            <div>
+                <input type="checkbox" name="{{ item.name }}" value="{{ item.data }}">
+                {{ item.label }}
+            </div>
+        {% endfor %}
+            <br>
+        {% for item in form.adjectives5 %}
+            <div>
+                <input type="checkbox" name="{{ item.name }}" value="{{ item.data }}">
+                {{ item.label }}
+            </div>
+        {% endfor %}
+            <br>
+        {% for item in form.adjectives6 %}
+            <div>
+                <input type="checkbox" name="{{ item.name }}" value="{{ item.data }}">
+                {{ item.label }}
+            </div>
+        {% endfor %}
+            <br>
+        {% for item in form.adjectives7 %}
+            <div>
+                <input type="checkbox" name="{{ item.name }}" value="{{ item.data }}">
+                {{ item.label }}
+            </div>
+        {% endfor %}
+            <br>
+        {% for item in form.adjectives8 %}
+            <div>
+                <input type="checkbox" name="{{ item.name }}" value="{{ item.data }}">
+                {{ item.label }}
+            </div>
+        {% endfor %}
+            <br>
+        {% for item in form.adjectives9 %}
+            <div>
+                <input type="checkbox" name="{{ item.name }}" value="{{ item.data }}">
+                {{ item.label }}
+            </div>
+        {% endfor %}
+            <br>
+        {% for item in form.adjectives10 %}
+            <div>
+                <input type="checkbox" name="{{ item.name }}" value="{{ item.data }}">
+                {{ item.label }}
+            </div>
+        {% endfor %}
+        <br>
+        {% for item in form.adjectives11 %}
+            <div>
+                <input type="checkbox" name="{{ item.name }}" value="{{ item.data }}">
+                {{ item.label }}
+            </div>
+        {% endfor %}
+        <br>
+        {% for item in form.adjectives12 %}
+            <div>
+                <input type="checkbox" name="{{ item.name }}" value="{{ item.data }}">
+                {{ item.label }}
+            </div>
+        {% endfor %}
+        <br>
+        {% for item in form.adjectives13 %}
+            <div>
+                <input type="checkbox" name="{{ item.name }}" value="{{ item.data }}">
+                {{ item.label }}
+            </div>
+        {% endfor %}
+        <br>
+        {% for item in form.adjectives14 %}
+            <div>
+                <input type="checkbox" name="{{ item.name }}" value="{{ item.data }}">
+                {{ item.label }}
+            </div>
+        {% endfor %}
+        <br>
+        {% for item in form.adjectives15 %}
+            <div>
+                <input type="checkbox" name="{{ item.name }}" value="{{ item.data }}">
+                {{ item.label }}
+            </div>
+        {% endfor %}
+        <br>
+        {% for item in form.adjectives16 %}
+            <div>
+                <input type="checkbox" name="{{ item.name }}" value="{{ item.data }}">
+                {{ item.label }}
+            </div>
+        {% endfor %}
+        <br>
+        {% for item in form.adjectives17 %}
+            <div>
+                <input type="checkbox" name="{{ item.name }}" value="{{ item.data }}">
+                {{ item.label }}
+            </div>
+        {% endfor %}
+        <br>
+        {% for item in form.adjectives18 %}
+            <div>
+                <input type="checkbox" name="{{ item.name }}" value="{{ item.data }}">
+                {{ item.label }}
+            </div>
+        {% endfor %}
+        <br>
+        {% for item in form.adjectives19 %}
+            <div>
+                <input type="checkbox" name="{{ item.name }}" value="{{ item.data }}">
+                {{ item.label }}
+            </div>
+        {% endfor %}
+        <br>
+        {% for item in form.adjectives20 %}
+            <div>
+                <input type="checkbox" name="{{ item.name }}" value="{{ item.data }}">
+                {{ item.label }}
+            </div>
+        {% endfor %}
 
         {{ form.submit(class="btn btn-primary submit") }}
     </form>

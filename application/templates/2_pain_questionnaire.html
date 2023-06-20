@@ -17,17 +17,14 @@
                 {{ item.label }}
             </div>
         {% endfor %}
-
+            <br>
+        <p>Do the following items increase or decrease (change) your pain?</p>
         {% for item in form.increase %}
             <div>
                 <input type="checkbox" name="{{ item.name }}" value="{{ item.data }}">
                 {{ item.label }}
             </div>
         {% endfor %}
-
-<p>Do the following items increase or decrease (change) your pain?</p>
-
-
 
         {{ form.submit(class="btn btn-primary submit") }}
     </form>

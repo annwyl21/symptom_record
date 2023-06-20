@@ -14,108 +14,27 @@ class RecordForm(FlaskForm):
     submit = SubmitField('Submit')
 
 class Mcgill1Form(FlaskForm):
-    for key, list_of_words in mcgill_feels_like.items():
-        for word in list_of_words:
-            word = BooleanField(word, default=False)
-
-    # #1
-    # flickering = BooleanField('Flickering', default=False)
-    # quivering = BooleanField('Quivering', default=False)
-    # pulsing = BooleanField('Pulsing', default=False)
-    # throbbing = BooleanField('Throbbing', default=False)
-    # beating = BooleanField('Beating', default=False)
-    # pounding = BooleanField('Pounding', default=False)
-    # #2
-    # jumping = BooleanField('Jumping', default=False)
-    # flashing = BooleanField('Flashing', default=False)
-    # shooting = BooleanField('Shooting', default=False)
-    # #3
-    # pricking = BooleanField('Pricking', default=False)
-    # boring = BooleanField('Boring', default=False)
-    # drilling = BooleanField('Drilling', default=False)
-    # stabbing = BooleanField('Stabbing', default=False)
-    # lancinating = BooleanField('Lancinating', default=False)
-    # #4
-    # sharp = BooleanField('Sharp', default=False)
-    # cutting = BooleanField('Cutting', default=False)
-    # lacerating = BooleanField('Lacerating', default=False)
-    # #5
-    # pinching = BooleanField('Pinching', default=False)
-    # pressing = BooleanField('Pressing', default=False)
-    # gnawing = BooleanField('Gnawing', default=False)
-    # cramping = BooleanField('Cramping', default=False)
-    # crushing = BooleanField('Crushing', default=False)
-    # #6
-    # tugging = BooleanField('Tugging', default=False)
-    # pulling = BooleanField('Pulling', default=False)
-    # wrenching = BooleanField('Wrenching', default=False)
-    # #7
-    # hot = BooleanField('Hot', default=False)
-    # boring = BooleanField('Boring', default=False)
-    # scalding = BooleanField('Scalding', default=False)
-    # searing = BooleanField('Searing', default=False)
-    # #8
-    # tingling = BooleanField('Tingling', default=False)
-    # itchy = BooleanField('Itchy', default=False)
-    # smarting = BooleanField('Smarting', default=False)
-    # stinging = BooleanField('Stinging', default=False)
-    # #9
-    # dull = BooleanField('Dull', default=False)
-    # sore = BooleanField('Sore', default=False)
-    # hurting = BooleanField('Hurting', default=False)
-    # aching = BooleanField('Aching', default=False)
-    # heavy = BooleanField('Heavy', default=False)
-    # #10
-    # tender = BooleanField('Tender', default=False)
-    # taut = BooleanField('Taut', default=False)
-    # rasping = BooleanField('Rasping', default=False)
-    # splitting = BooleanField('Splitting', default=False)
-    # #11
-    # tiring = BooleanField('Tiring', default=False)
-    # exhausting = BooleanField('Exhausting', default=False)
-    # #12
-    # sickening = BooleanField('Sickening', default=False)
-    # suffocating = BooleanField('Suffocating', default=False)
-    # #13
-    # fearful = BooleanField('Fearful', default=False)
-    # frightful = BooleanField('Frightful', default=False)
-    # terrifying = BooleanField('Terrifying', default=False)
-    # #14
-    # punishing = BooleanField('Punishing', default=False)
-    # gruelling = BooleanField('Gruelling', default=False)
-    # cruel = BooleanField('Cruel', default=False)
-    # vicious = BooleanField('Vicious', default=False)
-    # killing = BooleanField('Killing', default=False)
-    # #15
-    # wretched = BooleanField('Wretched', default=False)
-    # blinding = BooleanField('Blinding', default=False)
-    # #16
-    # annoying = BooleanField('Annoying', default=False)
-    # troubling = BooleanField('Troubling', default=False)
-    # miserable = BooleanField('Miserable', default=False)
-    # intense = BooleanField('Intense', default=False)
-    # unbearable = BooleanField('Unbearable', default=False)
-    # #17
-    # spreading = BooleanField('Spreading', default=False)
-    # radiating = BooleanField('Radiating', default=False)
-    # penetrating = BooleanField('Penetrating', default=False)
-    # piercing = BooleanField('Piercing', default=False)
-    # #18
-    # tight = BooleanField('Tight', default=False)
-    # numb = BooleanField('Numb', default=False)
-    # drawing = BooleanField('Drawing', default=False)
-    # squeezing = BooleanField('Squeezing', default=False)
-    # tearing = BooleanField('Tearing', default=False)
-    # #19
-    # cool = BooleanField('Cool', default=False)
-    # cold = BooleanField('Cold', default=False)
-    # freezing = BooleanField('Freezing', default=False)
-    # #20
-    # nagging = BooleanField('Nagging', default=False)
-    # nauseating = BooleanField('Nauseating', default=False)
-    # agonizing = BooleanField('Agonizing', default=False)
-    # dreadful = BooleanField('Dreadful', default=False)
-    # torturing = BooleanField('Torturing', default=False)
+    adjectives1 = SelectMultipleField('adjectives1', choices=[(1, 'flickering'), (2, 'quivering'), (3, 'pulsing'), (4, 'throbbing'), (5, 'beating'), (6, 'pounding')])
+    adjectives2 = SelectMultipleField('adjectives2', choices=[(1, 'jumping'), (2, 'flashing'), (3, 'shooting')])
+    adjectives3 = SelectMultipleField('adjectives3', choices=[(1, 'pricking'), (2, 'boring'), (3, 'drilling'), (4, 'stabbing'), (5, 'lancinating')])
+    adjectives4 = SelectMultipleField('adjectives4', choices=[(1, 'sharp'), (2, 'cutting'), (3, 'lacerating')])
+    adjectives5 = SelectMultipleField('adjectives5', choices=[(1, 'pinching'), (2, 'pressing'), (3, 'gnawing'), (4, 'cramping'), (5, 'crushing')])
+    adjectives6 = SelectMultipleField('adjectives6', choices=[(1, 'tugging'), (2, 'pulling'), (3, 'wrenching')])
+    adjectives7 = SelectMultipleField('adjectives7', choices=[(1, 'hot'), (2, 'boring'), (3, 'scalding'), (4, 'searing')])
+    adjectives8 = SelectMultipleField('adjectives8', choices=[(1, 'tingling'), (2, 'itchy'), (3, 'smarting'), (4, 'stinging')])
+    adjectives9 = SelectMultipleField('adjectives9', choices=[(1, 'dull'), (2, 'sore'), (3, 'hurting'), (4, 'aching'), (5, 'heavy')])
+    adjectives10 = SelectMultipleField('adjectives10', choices=[(1, 'tender'), (2, 'taut'), (3, 'rasping'), (4, 'splitting')])
+    adjectives11 = SelectMultipleField('adjectives11', choices=[(1, 'tiring'), (2, 'exhausting')])
+    adjectives12 = SelectMultipleField('adjectives12', choices=[(1, 'sickening'), (2, 'suffocating')])
+    adjectives13 = SelectMultipleField('adjectives13', choices=[(1, 'fearful'), (2, 'frightful'), (3, 'terrifying')])
+    adjectives14 = SelectMultipleField('adjectives14', choices=[(1, 'punishing'), (2, 'gruelling'), (3, 'cruel'), (4, 'vicious'), (5, 'killing')])
+    adjectives15 = SelectMultipleField('adjectives15', choices=[(1, 'wretched'), (2, 'blinding')])
+    adjectives16 = SelectMultipleField('adjectives16', choices=[(1, 'annoying'), (2, 'troubling'), (3, 'miserable'), (4, 'intense'), (5, 'unbearable')])
+    adjectives17 = SelectMultipleField('adjectives17', choices=[(1, 'spreading'), (2, 'radiating'), (3, 'penetrating'), (4, 'piercing')])
+    adjectives18 = SelectMultipleField('adjectives18', choices=[(1, 'tight'), (2, 'numb'), (3, 'drawing'), (4, 'squeezing'), (5, 'tearing')])
+    adjectives19 = SelectMultipleField('adjectives19', choices=[(1, 'cool'), (2, 'cold'), (3, 'freezing')])
+    adjectives20 = SelectMultipleField('adjectives20', choices=[(1, 'nagging'), (2, 'nauseating'), (3, 'agonizing'), (4, 'dreadful'), (5, 'torturing')])
+# be careful with this because you want to be able to access the words for the wordweb
 
     submit = SubmitField('Submit')
     

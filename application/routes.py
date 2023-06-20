@@ -63,8 +63,19 @@ pain_score = 0
 
 @app.route('/mcgill1', methods=['GET', 'POST'])
 def mcgill1():
+    pain_adjectives_score = 0
     form = Mcgill1Form()
     pain_words = mcgill_feels_like
+    if request.method == 'POST':
+        print(form.data)
+        pain_dictionary = form.data
+        for num in range(19):
+            string = 'adjectives' + str(num+1)
+            for pain_adjectives, score_list in pain_dictionary.items():
+                if pain_adjectives == string:
+                    for score in score_list:
+                        pain_adjectives_score += int(score)
+        print(pain_adjectives_score)
     return render_template('1_pain_questionnaire.html', title='McGill Pain Questionnaire', form=form, pain_words=pain_words)
 
 @app.route('/mcgill2', methods=['GET', 'POST'])
@@ -80,8 +91,6 @@ def mcgill2():
             total_change += int(score)
         for score in increase:
             total_increase += int(score)
-        pain_score += total_change
-        pain_score += total_increase
         
     pain_change = mcgill_change
     pain_increase = mcgill_increase
@@ -89,12 +98,12 @@ def mcgill2():
 
 @app.route('/mcgill3', methods=['GET', 'POST'])
 def mcgill3():
+    pain_intensity_score = 0
     form = Mcgill3Form()
     if request.method == 'POST':
         intensity = form.intensity.data
-        pain_score += intensity
-        #print(pain_score)
-        # add that score into the database and retrieve to generate bubbleplot, forward to success page
+        pain_intensity_score += intensity
+
     pain_intensity = Mcgill_intensity
     return render_template('3_pain_questionnaire.html', title='McGill Pain Questionnaire', form=form, pain_intensity=pain_intensity)
 
