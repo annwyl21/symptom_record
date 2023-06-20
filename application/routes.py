@@ -59,6 +59,8 @@ def display_summary():
         bubbleplot()
     return render_template('display_summary.html', title='Symptom Summary', summary=summary, pain=pain)
 
+pain_score = []
+
 @app.route('/mcgill1', methods=['GET', 'POST'])
 def mcgill1():
     form = Mcgill1Form()
@@ -75,5 +77,21 @@ def mcgill2():
 @app.route('/mcgill3', methods=['GET', 'POST'])
 def mcgill3():
     form = Mcgill3Form()
+    if request.method == 'POST':
+        intensity = form.intensity.data
+        pain_score.append(intensity)
+        print(pain_score)
+        # add that score into the database and retrieve to generate bubbleplot, forward to success page
     pain_intensity = Mcgill_intensity
     return render_template('3_pain_questionnaire.html', title='McGill Pain Questionnaire', form=form, pain_intensity=pain_intensity)
+
+            # {% for pain_words_list in pain_intensity.values() %}
+            #     {% for intensity_description in pain_words_list %}
+            #     <div class="form-check">
+            #         <input class="form-check-input" type="checkbox" value="{{ pain_words_list.index(intensity_description) }}" id="{{ intensity_description }}">
+            #         <label class="form-check-label" for="{{ intensity_description }}">
+            #           {{ intensity_description }}
+            #         </label>
+            #       </div>
+            #     {% endfor %}
+            # {% endfor %}

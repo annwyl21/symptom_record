@@ -13,14 +13,13 @@
 
         <div class="mb-3">
 
-            {% for key, value in pain_intensity.items() %}
-                {% for word in value %}
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="{{ word }}" id="{{ word }}">
-                    <label class="form-check-label" for="{{ word }}">{{ word }}</label>
-                </div>
-                {% endfor %}
-            {% endfor %}
+            {% for subfield in form.intensity %}
+            <tr>
+                <td>{{ subfield }}</td>
+                <td>{{ subfield.label }}</td>
+            </tr>
+        {% endfor %}
+
         </div>
 
         {{ form.submit(class="btn btn-primary submit") }}
