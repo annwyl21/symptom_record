@@ -11,31 +11,23 @@
     <form method="POST" action="">
       {{ form.hidden_tag() }}
 
-        <div class="mb-3">
+        {% for item in form.change %}
+            <div>
+                <input type="checkbox" name="{{ item.name }}" value="{{ item.data }}">
+                {{ item.label }}
+            </div>
+        {% endfor %}
 
-            {% for key, value in pain_change.items() %}
-                {% for word in value %}
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="{{ word }}" id="{{ word }}">
-                    <label class="form-check-label" for="{{ word }}">{{ word }}</label>
-                </div>
-                {% endfor %}
-            {% endfor %}
-        </div>
+        {% for item in form.increase %}
+            <div>
+                <input type="checkbox" name="{{ item.name }}" value="{{ item.data }}">
+                {{ item.label }}
+            </div>
+        {% endfor %}
 
 <p>Do the following items increase or decrease (change) your pain?</p>
 
-        <div class="mb-3">
 
-            {% for key, value in pain_increase.items() %}
-                {% for word in value %}
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="{{ word }}" id="xxx">
-                    <label class="form-check-label" for="xxx">{{ word }}</label>
-                </div>
-                {% endfor %}
-            {% endfor %}
-        </div>
 
         {{ form.submit(class="btn btn-primary submit") }}
     </form>

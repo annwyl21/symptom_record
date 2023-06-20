@@ -1,4 +1,4 @@
-from wtforms import SubmitField, StringField, BooleanField, RadioField
+from wtforms import SubmitField, StringField, BooleanField, RadioField, SelectMultipleField
 from flask_wtf import FlaskForm
 from application.mcgill_pain_questionnaire import mcgill_feels_like
 
@@ -121,32 +121,9 @@ class Mcgill1Form(FlaskForm):
     
 class Mcgill2Form(FlaskForm):
     #change
-    continous = BooleanField('continous steady constant', default=False)
-    periodic = BooleanField('rhythmic periodic intermittent', default=False)
-    momentary = BooleanField('brief momentary transient', default=False)
+    change = SelectMultipleField('change', choices=[(1, 'continous steady constant'), (2, 'rhythmic periodic intermittent'), (3, 'brief momentary transient')])
     #increase
-    liquor = BooleanField('liquor', default=False)
-    stimulants = BooleanField('stimulants such as coffee', default=False)
-    eating = BooleanField('eating', default=False)
-    heat = BooleanField('heat', default=False)
-    cold = BooleanField('cold', default=False)
-    damp = BooleanField('damp', default=False)
-    weather = BooleanField('weather changes', default=False)
-    massage = BooleanField('massage or use of a vibrator', default=False)
-    pressure = BooleanField('pressure', default=False)
-    no_movement = BooleanField('no movement', default=False)
-    movement = BooleanField('movement', default=False)
-    sleep = BooleanField('sleep or rest', default=False)
-    lying_down = BooleanField('lying down', default=False)
-    distraction = BooleanField('distraction (TV, reading etc)', default=False)
-    urination = BooleanField('urination or defecation', default=False)
-    tension = BooleanField('tension', default=False)
-    bright_lights = BooleanField('bright lights', default=False)
-    loud_noises = BooleanField('loud noises', default=False)
-    going_to_work = BooleanField('going to work', default=False)
-    intercourse = BooleanField('intercourse', default=False)
-    mild_exercise = BooleanField('mild exercise', default=False)
-    fatigue = BooleanField('fatigue', default=False)
+    increase = SelectMultipleField('increase', choices=[(1, 'liquor'), (2, 'stimulants'), (3, 'eating'), (4, 'heat'), (5, 'cold'), (6, 'damp'), (7, 'weather changes'), (8, 'massage or use of a vibrator'), (9, 'pressure'), (10, 'no movement'), (11, 'movement'), (12, 'sleep'), (13, 'lying down'), (14, 'distraction (TV, reading etc)'), (15, 'urination or defecation'), (16, 'tension'), (17, 'bright lights'), (18, 'loud_noises'), (19, 'going to work'), (20, 'intercourse'), (21, 'mild exercise'), (22, 'fatigue')], default=False)
 
     submit = SubmitField('Submit')
 
