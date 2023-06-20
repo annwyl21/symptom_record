@@ -14,14 +14,23 @@
 
         <div class="mb-3">
             <label for="symptoms" class="form-label">Record your symptoms here</label>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="pain" id="flexRadioDefault1">
-                <label class="form-check-label" for="flexRadioDefault1">I am in pain</label>
-              </div>
-              <!-- <div class="form-check">
-                <input class="form-check-input" type="radio" name="mchill" id="flexRadioDefault2">
-                <label class="form-check-label" for="flexRadioDefault2">I want to record my pain using the pain scale</label>
-              </div> -->
+            <br>
+            <p>Are you in pain?</p>
+              {% for subfield in form.pain %}
+                <tr>
+                  <td>{{ subfield }}</td>
+                  <td>{{ subfield.label }}</td>
+                </tr>
+              {% endfor %}
+              <br><br>
+              <p>Would you like to record your pain?</p>
+              {% for subfield in form.mcgill %}
+              <tr>
+                <td>{{ subfield }}</td>
+                <td>{{ subfield.label }}</td>
+              </tr>
+            {% endfor %}
+            <br>
             <textarea class="form-control" id="symptoms" rows="3" name="symptoms" placeholder="mysymptoms"></textarea>
         </div>
 
@@ -29,7 +38,7 @@
     </form>
 </div>
 
-<a class="btn btn-primary" href="./display_record" role="button">Display my Symptom Record</a>
+<a class="btn btn-primary" href="./display_record.html" role="button">Display my Symptom Record</a>
 
 <br>
 

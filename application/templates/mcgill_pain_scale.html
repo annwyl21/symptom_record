@@ -151,6 +151,36 @@
             </div>
         {% endfor %}
 
+        <p>Which word or words would you choose to describe the pattern of your pain?</p>
+
+        {% for item in form.change %}
+            <div>
+                <input type="checkbox" name="{{ item.name }}" value="{{ item.data }}">
+                {{ item.label }}
+            </div>
+        {% endfor %}
+            <br>
+        <p>Do the following items increase or decrease (change) your pain?</p>
+        {% for item in form.increase %}
+            <div>
+                <input type="checkbox" name="{{ item.name }}" value="{{ item.data }}">
+                {{ item.label }}
+            </div>
+        {% endfor %}
+        
+        <p>Which words describes your pain right now?</p>
+
+        <div class="mb-3">
+
+            {% for subfield in form.intensity %}
+            <tr>
+                <td>{{ subfield }}</td>
+                <td>{{ subfield.label }}</td>
+            </tr>
+        {% endfor %}
+
+        </div>
+
         {{ form.submit(class="btn btn-primary submit") }}
     </form>
 </div>
