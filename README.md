@@ -1,10 +1,10 @@
 # Symptom Logger Application
 
-This application facilitates the logging of symptoms in free text, such as headaches or hip pain, over time. The accumulated symptom data can be concisely summarised, using a [metaprompt](./application/metaprompt.py) by AI for healthcare professionals or VETs. I used the **open ai playground** to experiment with 2 AI models; text-curie-001 and text-davinci-003, and develop my prompt. It was a really useful tool to compare the AI tools aswell as manipulating my prompt.
+This application facilitates the logging of symptoms in free text, such as headaches or hip pain, over time. The accumulated symptom data can be concisely summarised, using a [**metaprompt**](./application/metaprompt.py) by AI for healthcare professionals or VETs. I used the **open ai playground** to experiment with 2 AI models; text-curie-001 and text-davinci-003, and develop my prompt. It was a really useful tool to compare the AI tools aswell as manipulating my prompt.
 
 ## Purpose
 
-The tool addresses the need for busy individuals, like parents or pet owners, to accurately record and convey symptoms during brief medical consultations. As AI increasingly aids in diagnosis, precise symptom reporting becomes paramount. This tool offers a solution to this challenge. There is also an option to score pain loosely based on the McGill Pain Assessment, and a bubbleplot tracking symptoms over time and showing pain intensity using bubble size is generated.
+The tool addresses the need for busy individuals, like parents or pet owners, to accurately record and convey symptoms during brief medical consultations. As AI increasingly aids in diagnosis, precise symptom reporting becomes paramount. This tool offers a solution to this challenge. There is also an option to score pain loosely based on the McGill Pain Assessment, and a **bubbleplot** tracking symptoms over time and showing pain intensity using bubble size is generated.
 
 ![Image - Bubbleplot](./application/static/images/bubbleplot.png)
 
