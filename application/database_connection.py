@@ -1,6 +1,7 @@
 import psycopg2
 
 print('Connecting to the PostgreSQL database...')
+# symptom_log is the name of both my database and the schema within it
 
 # Establish a connection to the database
 conn = psycopg2.connect(
@@ -31,8 +32,8 @@ for schema in schemas:
 
 
 cur.execute("""SELECT table_name FROM information_schema.tables
-                WHERE table_schema = 'public'""")
-print("List of tables in schema public:")
+                WHERE table_schema = 'symptom_log'""")
+print("List of tables in schema symptom_log:")
 tables = cur.fetchall()
 for table in tables:
     print(table)
