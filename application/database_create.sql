@@ -13,6 +13,9 @@ create table symptom_log.user_data (
     email varchar(100)
 );
 
+insert into symptom_log.user_data (username, password, firstname, lastname, email)
+values ('mrs_tester', 'test_password', 'Mrs', 'Tester', 'test@email.com');
+
 create table symptom_log.summary_collection (
     summary_id serial primary key,
     symptoms_summary varchar(500) not null,

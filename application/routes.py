@@ -1,5 +1,6 @@
 from flask import render_template, request
 from application import app
+from application.database_use import Symptom_log
 from application.forms import LoginForm, RecordForm, McgillForm
 #from application.summarize import create_summary
 from application.summarize_ai import summarize_with_ai
