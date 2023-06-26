@@ -20,6 +20,7 @@ print('Connected to the PostgreSQL database')
 class Symptom_log:
 
     def check_username_password_exist(username, password):
+        print('Checking username and password...')
         cur.execute("select * from symptom_log.user_data where username = %s and password = %s;", (username, password))
         rows = cur.fetchall()
         if len(rows) == 0:
@@ -28,16 +29,14 @@ class Symptom_log:
             user_id = rows[0][0]
             return user_id
     
-    def add_a_symptom(user_id, symptom_details):
-        now = datetime.now()
-        date = now.strftime("%Y-%m-%d")
-        time = now.strftime("%H:%M")
+    def add_a_symptom(user_id, symptom_details, date, time):
+        print('data to insert', user_id, symptom_details, date, time)
         cur.execute("insert into symptom_log.symptom_collection (user_id, date, time, symptom_details) values (%s, %s, %s, %s);", (user_id, date, time, symptom_details))
         conn.commit()
         return True
     
     def get_symptoms(user_id):
-        cur.execute("select symptom_details from symptom_log.symptom_collection where user_id = %s;", (user_id,)) 
+        cur.execute("select date, time, symptom_details from symptom_log.symptom_collection where user_id = %s;", (user_id,)) 
         # note the comma after user_id, this is because the execute() function expects a tuple of parameters, even if there is only one parameter
         # The execute() function in psycopg2, which is a PostgreSQL adapter for Python, expects a SQL query string and then a tuple (or dictionary in some cases) of parameters to substitute into the SQL query.
         rows = cur.fetchall()
@@ -68,5 +67,5 @@ if __name__ == "__main__":
 
 
 # Close the cursor and connection
-cur.close()
-conn.close()
+# cur.close()
+# conn.close()

@@ -4,6 +4,23 @@
 
 Record Displayed
 <br>
+<p>from txt file</p>
 <p>{{ content|safe }}</p>
+<br>
+<p>Retrieved from database</p>
+<table>
+	<th>
+		<td>Date</td>
+		<td>Time</td>
+		<td>Details of Symptoms Recorded</td>
+	</th>
+{% for symptom_data_tuple in symptom_list %}
+	<tr>
+		<td>{{ symptom_data_tuple[0] }}</td>
+		<td>{{ symptom_data_tuple[1] }}</td>
+		<td>{{ symptom_data_tuple[2] }}</td>
+	</tr>
+	</table>
+{% endfor %}
 
 {% endblock %}

@@ -6,7 +6,7 @@ from application.forms import LoginForm, RecordForm, McgillForm
 from application.summarize_ai import summarize_with_ai
 from application.scatterplot import scatterplot
 from application.bubbleplot import bubbleplot
-#from datetime import datetime
+from datetime import datetime
 
 @app.route('/')
 def index():
@@ -33,7 +33,11 @@ def record():
         if user_id == False:
             error = "Please enter username and password"
         else:
-            Symptom_log.add_a_symptom(user_id, symptoms)
+            now = datetime.now()
+            date = now.strftime("%Y-%m-%d")
+            time = now.strftime("%H:%M")
+            data_added = Symptom_log.add_a_symptom(user_id, symptoms, date, time)
+            print('data added', data_added)
         if mcgill == 'True':
             return render_template('record_pain.html', title="Record Pain")
         else: 
@@ -48,7 +52,7 @@ def login():
         username = form.username.data
         password = form.password.data
         user_id = Symptom_log.check_username_password_exist(username, password)
-        if user_id == False:
+        if user_id == 'False':
             error = "Please enter username and password"
         else:
             return render_template('login_success.html', title="Login Success")
@@ -60,14 +64,16 @@ def display_record():
     # display the txt file
     with open('./file_output/symptoms.txt', 'r') as f:
         content = f.read()
-    
     # display the database results
-    
-    return render_template('display_record.html', title='Symptom Record', content=content)
+    symptom_list = Symptom_log.get_symptoms(user_id=1)
+    print(symptom_list)
+    return render_template('display_record.html', title="Symptom Record", content=content, symptom_list=symptom_list)
 
 @app.route('/display_summary')
 def display_summary():
-    summary = summarize_with_ai().choices[0].text
+    symptoms_summary = summarize_with_ai().choices[0].text
+    user_id = Symptom_log.get_user_id()
+    Symptom_log.add_a_symptom_summary(symptoms_summary, '2023-01-01', '2023-07-01', user_id)
     pain = False
     if pain == False:
         # create symptom scatterplot or bubbleplot to add a dimension of pain information
