@@ -3,10 +3,7 @@
 {% block main_content %}
 
 Record Displayed
-<br>
-<p>from txt file</p>
-<p>{{ content|safe }}</p>
-<br>
+
 <p>Retrieved from database</p>
 <table>
 	<th>
@@ -14,13 +11,13 @@ Record Displayed
 		<td>Time</td>
 		<td>Details of Symptoms Recorded</td>
 	</th>
-{% for symptom_data_tuple in symptom_list %}
+{% for nested_symptom_data in symptom_list %}
 	<tr>
-		<td>{{ symptom_data_tuple[0] }}</td>
-		<td>{{ symptom_data_tuple[1] }}</td>
-		<td>{{ symptom_data_tuple[2] }}</td>
+		<td>{{ nested_symptom_data[0] }}</td>
+		<td>{{ nested_symptom_data[1] }}</td>
+		<td>{{ nested_symptom_data[2] }}</td>
 	</tr>
-	</table>
+</table>
 {% endfor %}
 
 {% endblock %}
