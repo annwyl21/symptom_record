@@ -4,3 +4,4 @@ wtforms
 nltk
 openai
 matplotlib
+psycopg2
