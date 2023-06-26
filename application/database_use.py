@@ -22,13 +22,11 @@ class Symptom_log:
     def check_username_password_exist(username, password):
         cur.execute("select * from symptom_log.user_data where username = %s and password = %s;", (username, password))
         rows = cur.fetchall()
-        print(rows)
         if len(rows) == 0:
             return False
         else:
             user_id = rows[0][0]
-            print(user_id)
-            return True
+            return user_id
     
     def add_a_symptom(user_id, symptom_details):
         now = datetime.now()

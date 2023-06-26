@@ -6,7 +6,7 @@ from application.forms import LoginForm, RecordForm, McgillForm
 from application.summarize_ai import summarize_with_ai
 from application.scatterplot import scatterplot
 from application.bubbleplot import bubbleplot
-from datetime import datetime
+#from datetime import datetime
 
 @app.route('/')
 def index():
@@ -18,12 +18,22 @@ def record():
     if request.method == 'POST':
         pain = form.pain.data
         mcgill = form.mcgill.data
-        print(pain, mcgill)
         symptoms = form.symptoms.data
+
+        # capture symptom record in txt file
         now = datetime.now()
         date_time_str = now.strftime("%d-%m-%Y %H:%M")
         with open('./file_output/symptoms.txt', 'a') as f:
-            f.write(date_time_str + '<br>' + symptoms + '<br>' + 'Pain=' + str(pain) + '<br>')
+           f.write(date_time_str + '<br>' + symptoms + '<br>' + 'Pain=' + str(pain) + '<br>')
+
+        # capture symptom record in database
+        username = form.username.data
+        password = form.password.data
+        user_id = Symptom_log.check_username_password_exist(username, password)
+        if user_id == False:
+            error = "Please enter username and password"
+        else:
+            Symptom_log.add_a_symptom(user_id, symptoms)
         if mcgill == 'True':
             return render_template('record_pain.html', title="Record Pain")
         else: 
@@ -35,8 +45,10 @@ def login():
     error = ""
     form = LoginForm()
     if request.method == 'POST':
+        username = form.username.data
         password = form.password.data
-        if password != 'test':
+        user_id = Symptom_log.check_username_password_exist(username, password)
+        if user_id == False:
             error = "Please enter username and password"
         else:
             return render_template('login_success.html', title="Login Success")
@@ -45,8 +57,12 @@ def login():
 
 @app.route('/display_record')
 def display_record():
+    # display the txt file
     with open('./file_output/symptoms.txt', 'r') as f:
         content = f.read()
+    
+    # display the database results
+    
     return render_template('display_record.html', title='Symptom Record', content=content)
 
 @app.route('/display_summary')
