@@ -65,8 +65,8 @@ def display_record():
     with open('./file_output/symptoms.txt', 'r') as f:
         content = f.read()
     # display the database results
-    symptom_list = Symptom_log.get_symptoms(user_id=1)
-    print(symptom_list)
+    symptom_list = Symptom_log.get_symptoms(user_id=2)
+    scatterplot()
     return render_template('display_record.html', title="Symptom Record", content=content, symptom_list=symptom_list)
 
 @app.route('/display_summary')
@@ -80,7 +80,7 @@ def display_summary():
         scatterplot()
     else:
         bubbleplot()
-    return render_template('display_summary.html', title='Symptom Summary', summary=summary, pain=pain)
+    return render_template('display_summary.html', title='Symptom Summary', summary=symptoms_summary, pain=pain)
 
 @app.route('/mcgill_pain_scale', methods=['GET', 'POST'])
 def mcgill_pain_scale():

@@ -4,14 +4,10 @@
 
 Record Displayed
 
-<p>Retrieved from database</p>
-<table>
-	<th>
-		<td>Date</td>
-		<td>Time</td>
-		<td>Details of Symptoms Recorded</td>
-	</th>
+<p>Date & Time symptom recorded and details...</p>
+
 {% for nested_symptom_data in symptom_list %}
+<table>
 	<tr>
 		<td>{{ nested_symptom_data[0] }}</td>
 		<td>{{ nested_symptom_data[1] }}</td>
@@ -19,5 +15,7 @@ Record Displayed
 	</tr>
 </table>
 {% endfor %}
+
+<img src="{{ url_for('static', filename='./images/scatterplot.png') }}" alt="scatterplot showing symptom change over time">
 
 {% endblock %}
