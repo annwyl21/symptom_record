@@ -35,7 +35,7 @@ cur.execute("insert into symptom_log.symptom_collection (user_id, date, time, sy
 cur.execute("insert into symptom_log.symptom_collection (user_id, date, time, symptom_details) values (%s, %s, %s, %s);", (user_id, '2022-06-15', '06:30', 'woke up with a splitting headache'))
 cur.execute("insert into symptom_log.symptom_collection (user_id, date, time, symptom_details) values (%s, %s, %s, %s);", (user_id, '2022-06-16', '06:01', 'really bad headache'))
 cur.execute("insert into symptom_log.symptom_collection (user_id, date, time, symptom_details) values (%s, %s, %s, %s);", (user_id, '2022-06-17', '04:01', 'woke up with headache'))
-cur.execute("insert into symptom_log.symptom_collection (user_id, date, time, symptom_details) values (%s, %s, %s, %s);", (user_id, '2022-06-17', '11:45', 'headache still there and I can\'t sleep'))
+cur.execute("insert into symptom_log.symptom_collection (user_id, date, time, symptom_details) values (%s, %s, %s, %s);", (user_id, '2022-06-17', '23:45', 'headache still there and I can\'t sleep'))
 conn.commit()
 
 # Close the cursor and connection

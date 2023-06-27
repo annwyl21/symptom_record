@@ -1,6 +1,6 @@
 from wtforms import SubmitField, StringField, RadioField, SelectMultipleField
 from flask_wtf import FlaskForm
-from application.mcgill_pain_questionnaire import mcgill_feels_like
+# from application.static.scripts.mcgill_pain_questionnaire import mcgill_feels_like
 
 class LoginForm(FlaskForm):
     username = StringField('Username')

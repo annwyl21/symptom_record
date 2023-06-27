@@ -6,7 +6,11 @@ from application.forms import LoginForm, RecordForm, McgillForm
 from application.summarize_ai import summarize_with_ai
 from application.scatterplot import scatterplot
 from application.bubbleplot import bubbleplot
+from application.data_format import Data_format
 from datetime import datetime
+
+# This is a demonstration app to showcase my skills in Python, Flask, PostgreSQL, HTML, CSS, and JavaScript.
+# I do not yet know how to code a secure login system, so I am using a global variable to store the user_id.
 
 @app.route('/')
 def index():
@@ -27,17 +31,10 @@ def record():
            f.write(date_time_str + '<br>' + symptoms + '<br>' + 'Pain=' + str(pain) + '<br>')
 
         # capture symptom record in database
-        username = form.username.data
-        password = form.password.data
-        user_id = Symptom_log.check_username_password_exist(username, password)
-        if user_id == False:
-            error = "Please enter username and password"
-        else:
-            now = datetime.now()
-            date = now.strftime("%Y-%m-%d")
-            time = now.strftime("%H:%M")
-            data_added = Symptom_log.add_a_symptom(user_id, symptoms, date, time)
-            print('data added', data_added)
+        now = datetime.now()
+        date = now.strftime("%Y-%m-%d")
+        time = now.strftime("%H:%M")
+        Symptom_log.add_a_symptom(my_user_id, symptoms, date, time)
         if mcgill == 'True':
             return render_template('record_pain.html', title="Record Pain")
         else: 
@@ -55,6 +52,8 @@ def login():
         if user_id == 'False':
             error = "Please enter username and password"
         else:
+            global my_user_id # using a global variable to work-around login because I don't know how to do it properly yet
+            my_user_id = user_id
             return render_template('login_success.html', title="Login Success")
     else:
         return render_template('login.html', title="Log in page", form=form, error=error)
@@ -64,16 +63,23 @@ def display_record():
     # display the txt file
     with open('./file_output/symptoms.txt', 'r') as f:
         content = f.read()
-    # display the database results
-    symptom_list = Symptom_log.get_symptoms(user_id=2)
-    scatterplot()
-    return render_template('display_record.html', title="Symptom Record", content=content, symptom_list=symptom_list)
+    # display the database results using the example user_id=2
+    symptom_list = Symptom_log.get_symptoms(my_user_id)
+    scatterplot(symptom_list)
+    list_of_symptom_data = []
+    for symptom in symptom_list:
+        symptom_data = []
+        symptom_data.append(Data_format.us_to_uk_date_format(symptom[0]))
+        symptom_data.append(Data_format.remove_seconds_notation(symptom[1]))
+        symptom_data.append(symptom[2])
+        list_of_symptom_data.append(symptom_data)
+        symptom_data_to_display = reversed(list_of_symptom_data)
+    return render_template('display_record.html', title="Symptom Record", content=content, list_of_symptoms=symptom_data_to_display)
 
 @app.route('/display_summary')
 def display_summary():
     symptoms_summary = summarize_with_ai().choices[0].text
-    user_id = Symptom_log.get_user_id()
-    Symptom_log.add_a_symptom_summary(symptoms_summary, '2023-01-01', '2023-07-01', user_id)
+    Symptom_log.add_a_symptom_summary(symptoms_summary, '2023-01-01', '2023-07-01', my_user_id)
     pain = False
     if pain == False:
         # create symptom scatterplot or bubbleplot to add a dimension of pain information
