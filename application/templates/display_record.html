@@ -2,20 +2,20 @@
 
 {% block main_content %}
 
-Record Displayed
-
-<p>Date & Time symptom recorded and details...</p>
-
-{% for nested_symptom_data in symptom_list %}
-<table>
-	<tr>
-		<td>{{ nested_symptom_data[0] }}</td>
-		<td>{{ nested_symptom_data[1] }}</td>
-		<td>{{ nested_symptom_data[2] }}</td>
-	</tr>
-</table>
-{% endfor %}
+<h2>My Symptom Record Displayed</h2>
 
 <img src="{{ url_for('static', filename='./images/scatterplot.png') }}" alt="scatterplot showing symptom change over time">
+
+<p>Details <i>(most recent first)</i>:</p>
+
+{% for nested_symptom_data in list_of_symptoms %}
+<ul>
+	<li>{{ nested_symptom_data[0] }}, {{ nested_symptom_data[1] }}
+		<ul>
+			<li>{{ nested_symptom_data[2] }}</li>
+		</ul>
+	</li>
+</ul>
+{% endfor %}
 
 {% endblock %}

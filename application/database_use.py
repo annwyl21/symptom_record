@@ -1,5 +1,6 @@
 import psycopg2
 from datetime import datetime
+from application.data_format import Data_format
 
 print('Connecting to the PostgreSQL database...')
 # symptom_log is the name of both my database and the schema within it
@@ -39,24 +40,7 @@ class Symptom_log:
         cur.execute("select date, time, symptom_details from symptom_log.symptom_collection where user_id = %s;", (user_id,)) 
         # note the comma after user_id, this is because the execute() function expects a tuple of parameters, even if there is only one parameter
         # The execute() function in psycopg2, which is a PostgreSQL adapter for Python, expects a SQL query string and then a tuple (or dictionary in some cases) of parameters to substitute into the SQL query.
-        rows = cur.fetchall()
-        symptoms = []
-        for row in rows:
-            retrieved_symptom = []
-            # change the date format of row[0] to be day month year
-            date = str(row[0])
-            date = datetime.strptime(date, '%Y-%m-%d')
-            date = date.strftime('%d %B %Y')
-            retrieved_symptom.append(date)
-            # change the time format of row[1] to be hour:minute
-            time = str(row[1])
-            time = datetime.strptime(time, '%H:%M:%S')
-            time = time.strftime('%H:%M')
-            retrieved_symptom.append(time)
-            # add symptom data
-            retrieved_symptom.append(row[2])
-            # add the symptom to the list of symptoms
-            symptoms.append(retrieved_symptom)
+        symptoms = cur.fetchall()
         return symptoms
     
     def add_a_symptom_summary(user_id, symptoms_summary, symptoms_start_date, symptoms_end_date):
