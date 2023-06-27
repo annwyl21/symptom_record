@@ -11,7 +11,6 @@ from datetime import datetime
 
 # This is a demonstration app to showcase my skills in Python, Flask, PostgreSQL, HTML, CSS, and JavaScript.
 # I do not yet know how to code a secure login system, so I am using a global variable to store the user_id.
-my_user_id = 0
 
 @app.route('/')
 def index():
@@ -53,6 +52,7 @@ def login():
         if user_id == 'False':
             error = "Please enter username and password"
         else:
+            global my_user_id # using a global variable to work-around login because I don't know how to do it properly yet
             my_user_id = user_id
             return render_template('login_success.html', title="Login Success")
     else:
@@ -64,7 +64,7 @@ def display_record():
     with open('./file_output/symptoms.txt', 'r') as f:
         content = f.read()
     # display the database results using the example user_id=2
-    symptom_list = Symptom_log.get_symptoms(user_id=2)
+    symptom_list = Symptom_log.get_symptoms(my_user_id)
     scatterplot(symptom_list)
     list_of_symptom_data = []
     for symptom in symptom_list:
@@ -79,8 +79,7 @@ def display_record():
 @app.route('/display_summary')
 def display_summary():
     symptoms_summary = summarize_with_ai().choices[0].text
-    user_id = Symptom_log.get_user_id()
-    Symptom_log.add_a_symptom_summary(symptoms_summary, '2023-01-01', '2023-07-01', user_id)
+    Symptom_log.add_a_symptom_summary(symptoms_summary, '2023-01-01', '2023-07-01', my_user_id)
     pain = False
     if pain == False:
         # create symptom scatterplot or bubbleplot to add a dimension of pain information
