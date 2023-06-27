@@ -36,6 +36,13 @@ create table symptom_log.symptom_collection (
     FOREIGN KEY (summary_id) REFERENCES symptom_log.summary_collection(summary_id)
 );
 
+create table symptom_log.pain_record (
+    pain_id serial primary key,
+    pain_score int not null,
+    summary_id int,
+    FOREIGN KEY (summary_id) REFERENCES symptom_log.summary_collection(summary_id)
+);
+
 -- varchar(255) is the max length of a string in MySQL, example:
 -- "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis est vel elit faucibus pulvinar. Sed suscipit, mi et eleifend laoreet, nisl libero bibendum justo, vitae scelerisque eros metus sit amet justo. Lorem."
 

@@ -11,6 +11,7 @@ The tool addresses the need for busy individuals, like parents or pet owners, to
 ![Image - Postgres Entity Relationship Diagram for Symptom Logger Database](./application/static/images/lucidchart_logger_erd.jpg)
 
 ### Run
+Requires the docker image of postgres that I have not yet published because I am still working on this June 27th 2023 - check back in a couple of days or look at the [sql code](./application/static/scripts/database_create.sql ) in this repo
 - Install the requirements
 ```bash
 pip install -r requirements.txt
