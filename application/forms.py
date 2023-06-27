@@ -8,6 +8,8 @@ class LoginForm(FlaskForm):
     submit = SubmitField('Submit')
 
 class RecordForm(FlaskForm):
+    username = StringField('Username')
+    password = StringField('Password')
     pain = RadioField('Pain', choices=[('True', 'I am in pain'), ('False', 'No pain')])
     mcgill = RadioField('McGill', choices=[('True', 'I want to record my pain'), ('False', 'skip this step')])
     symptoms = StringField('Symptoms')

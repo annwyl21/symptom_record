@@ -9,4 +9,4 @@ Record of Symptoms over time<br>
 14-06-2023 07:30<br>stiff when getting up<br>
 15-06-2023 06:30<br>stiff when getting up and pain in right hip when standing<br>
 16-06-2023 10:10<br>hip pain in right leg, difficulty using the stairs<br>
-20-06-2023 19:00<br>hip pain when walking upstairs<br>Pain=True<br>20-06-2023 19:22<br>hip pain<br>Pain=True<br>20-06-2023 19:22<br>hip pain<br>Pain=True<br>20-06-2023 19:23<br>hip pain<br>Pain=True<br>20-06-2023 19:27<br>hip pain<br>Pain=True<br>20-06-2023 19:32<br>hip pain<br>Pain=True<br>20-06-2023 19:42<br>test<br>Pain=True<br>
+20-06-2023 19:00<br>hip pain when walking upstairs<br>Pain=True<br>20-06-2023 19:22<br>hip pain<br>Pain=True<br>20-06-2023 19:22<br>hip pain<br>Pain=True<br>20-06-2023 19:23<br>hip pain<br>Pain=True<br>20-06-2023 19:27<br>hip pain<br>Pain=True<br>20-06-2023 19:32<br>hip pain<br>Pain=True<br>20-06-2023 19:42<br>test<br>Pain=True<br>26-06-2023 16:13<br>another headache<br>Pain=False<br>26-06-2023 16:31<br>another headache<br>Pain=False<br>26-06-2023 17:10<br>test headache<br>Pain=False<br>
